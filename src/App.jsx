@@ -18,9 +18,25 @@ function App() {
   console.log(count);
 
   const countUp = (indexRow, indexCol) => {
-    let arrayCount = [...count];
-    arrayCount[indexRow][indexCol]++;
-    setCount(arrayCount);
+    const arrayCount = [...count];
+
+    if (arrayCount[indexRow][indexCol] == 1) {
+      arrayCount[indexRow][indexCol]++;
+      setCount(arrayCount);
+    }
+
+    if (arrayCount[indexRow][indexCol] == 0) {
+      for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+          if (arrayCount[i][j] == 2) {
+            arrayCount[indexRow][indexCol]++;
+            arrayCount[i][j] = 0;
+            console.log(arrayCount[i][j]);
+            setCount(arrayCount);
+          }
+        }
+      }
+    }
   };
 
   return (
