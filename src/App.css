@@ -35,8 +35,19 @@
 
 .card {
   padding: 2em;
+  width: 640px;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.white-button {
+  background-color: #5a5a5a;
+  /* background-color: #8b0000; */
+}
+
+.space-dimension {
+  width: 80px;
+  height: 80px;
 }
