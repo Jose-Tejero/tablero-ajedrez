@@ -1,7 +1,7 @@
 // icon:cross | System UIcons https://systemuicons.com/ | Corey Ginnivan
 import * as React from 'react';
 
-function IconCross(props) {
+function Queen(props) {
   return (
     <svg
       fill='#FFFFFF'
@@ -10,15 +10,15 @@ function IconCross(props) {
       version='1.1'
       id='Layer_1'
       xmlns='http://www.w3.org/2000/svg'
-      xmlns:xlink='http://www.w3.org/1999/xlink'
+      xmlnsXlink='http://www.w3.org/1999/xlink'
       viewBox='0 0 512 512'
-      xml:space='preserve'
+      xmlSpace='preserve'
     >
-      <g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+      <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
       <g
         id='SVGRepo_tracerCarrier'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       ></g>
       <g id='SVGRepo_iconCarrier'>
         {' '}
@@ -34,4 +34,4 @@ function IconCross(props) {
   );
 }
 
-export default IconCross;
+export default Queen;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Queen from './icons/queen';
-import QueenMax from './icons/QueenMax';
+import Queen from './icons/Queen'
+import QueenMax from './icons/QueenMax'
 import './App.css';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   ]);
 
   const countUp = (indexRow, indexCol) => {
-    const arrayCount = [...count];
+    const arrayCount = count.map(row => [...row]);
 
     if (arrayCount[indexRow][indexCol] == 0) {
       for (let i = 0; i < 8; i++) {
@@ -43,10 +43,10 @@ function App() {
       <h1>Aprende ajedrez sencillo</h1>
       <div className='card'>
         {count.map((valueRow, indexRow) => (
-          <div>
+          <div key={indexRow}>
             {valueRow.map((valueCol, indexCol) => (
               <button
-                key={indexRow + indexCol}
+                key={indexCol}
                 onClick={() => countUp(indexRow, indexCol)}
                 className={
                   indexRow % 2 != 0
@@ -58,17 +58,7 @@ function App() {
                     : 'space-dimension'
                 }
               >
-                {/* {valueCol == 1 && <Queen />}
-              {valueCol == 2 && <QueenMax style={{fontSize: 20}}/>} */}
-                {/* {valueCol == 1 && 1}
-              {valueCol == 2 && 2} */}
-                {valueCol == 1 ? (
-                  <Queen />
-                ) : valueCol == 2 ? (
-                  <QueenMax style={{ fontSize: 20 }} />
-                ) : (
-                  ''
-                )}
+                {valueCol == 1 ? <Queen /> : valueCol == 2 ? <QueenMax /> : ''}
               </button>
             ))}
           </div>
