@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  line-height: 0;
 }
 
 .logo {
@@ -36,6 +37,8 @@
 .card {
   padding: 2em;
   width: 640px;
+  height: 640px;
+  display: flex;
 }
 
 .read-the-docs {
@@ -50,4 +53,8 @@
 .space-dimension {
   width: 80px;
   height: 80px;
+}
+
+button {
+  padding: 0;
 }
