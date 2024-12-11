@@ -51,7 +51,27 @@
   /* background-color: #8b0000; */
 }
 
-.space-dimension {
+.cell {
   width: 80px;
   height: 80px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  &:nth-child(2n) {
+    .cell:nth-child(2n) {
+      background: #5a5a5a;
+    }
+  }
+  &:nth-child(2n-1) {
+    .cell:nth-child(2n-1) {
+      background: #5a5a5a;
+    }
+  }
 }
