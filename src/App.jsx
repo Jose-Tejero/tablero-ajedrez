@@ -21,8 +21,8 @@ function App() {
       for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
           if (arrayCount[i][j] == 2) {
-            arrayCount[indexRow][indexCol]++;
-            arrayCount[i][j] = 0;
+             arrayCount[indexRow][indexCol]++;
+             arrayCount[i][j] = 0;
             console.log(arrayCount[i][j]);
             setCount(arrayCount);
           }
@@ -49,20 +49,12 @@ function App() {
       <h1>Aprende ajedrez sencillo</h1>
       <div className="card">
         {count.map((valueRow, indexRow) => (
-          <div key={indexRow}>
+          <div key={indexRow} className="row">
             {valueRow.map((valueCol, indexCol) => (
               <button
                 key={indexCol}
                 onClick={() => countUp(indexRow, indexCol)}
-                className={
-                  indexRow % 2 != 0
-                    ? indexCol % 2 == 0
-                      ? "space-dimension"
-                      : "white-button space-dimension"
-                    : indexCol % 2 == 0
-                    ? "white-button space-dimension"
-                    : "space-dimension"
-                }
+                className="center cell"
               >
                 {getPiece(valueCol)}
               </button>
