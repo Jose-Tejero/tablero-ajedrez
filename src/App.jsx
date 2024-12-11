@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Queen from "./icons/Queen";
+import ChessPiece from "./components/ChessPiece";
 import "./App.css";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1],
   ]);
 
   const countUp = (indexRow, indexCol) => {
@@ -21,8 +21,8 @@ function App() {
       for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
           if (arrayCount[i][j] == 2) {
-             arrayCount[indexRow][indexCol]++;
-             arrayCount[i][j] = 0;
+            arrayCount[indexRow][indexCol]++;
+            arrayCount[i][j] = 0;
             console.log(arrayCount[i][j]);
             setCount(arrayCount);
           }
@@ -39,9 +39,9 @@ function App() {
 
   const getPiece = (value) => {
     if (!value) return "";
-    if (value === 2) return <Queen size="60" />;
+    if (value === 2) return <ChessPiece piece="Rook" size="60" />;
 
-    return <Queen />;
+    return <ChessPiece piece="Rook" />;
   };
 
   return (
