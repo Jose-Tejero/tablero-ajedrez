@@ -7,6 +7,7 @@ function Queen(props) {
       fill='#FFFFFF'
       height='40px'
       width='40px'
+      display='block'
       version='1.1'
       id='Layer_1'
       xmlns='http://www.w3.org/2000/svg'

@@ -39,6 +39,7 @@
   width: 640px;
   height: 640px;
   display: flex;
+  flex-direction: column;
 }
 
 .read-the-docs {
@@ -53,8 +54,4 @@
 .space-dimension {
   width: 80px;
   height: 80px;
-}
-
-button {
-  padding: 0;
 }
