@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import Queen from './icons/Queen'
-import QueenMax from './icons/QueenMax'
-import './App.css';
+import { useState } from "react";
+import Queen from "./icons/Queen";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState([
@@ -16,7 +15,7 @@ function App() {
   ]);
 
   const countUp = (indexRow, indexCol) => {
-    const arrayCount = count.map(row => [...row]);
+    const arrayCount = count.map((row) => [...row]);
 
     if (arrayCount[indexRow][indexCol] == 0) {
       for (let i = 0; i < 8; i++) {
@@ -38,10 +37,17 @@ function App() {
     }
   };
 
+  const getPiece = (value) => {
+    if (!value) return "";
+    if (value === 2) return <Queen size="60" />;
+
+    return <Queen />;
+  };
+
   return (
     <>
       <h1>Aprende ajedrez sencillo</h1>
-      <div className='card'>
+      <div className="card">
         {count.map((valueRow, indexRow) => (
           <div key={indexRow}>
             {valueRow.map((valueCol, indexCol) => (
@@ -51,14 +57,14 @@ function App() {
                 className={
                   indexRow % 2 != 0
                     ? indexCol % 2 == 0
-                      ? 'space-dimension'
-                      : 'white-button space-dimension'
+                      ? "space-dimension"
+                      : "white-button space-dimension"
                     : indexCol % 2 == 0
-                    ? 'white-button space-dimension'
-                    : 'space-dimension'
+                    ? "white-button space-dimension"
+                    : "space-dimension"
                 }
               >
-                {valueCol == 1 ? <Queen /> : valueCol == 2 ? <QueenMax /> : ''}
+                {getPiece(valueCol)}
               </button>
             ))}
           </div>
