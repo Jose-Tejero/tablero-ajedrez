@@ -1,6 +1,20 @@
 import PropTypes from "prop-types";
-import * as pieces from "./pieces";
+import Pawn from "./pieces/Pawn";
+import Bishop from "./pieces/Bishop";
+import Rook from "./pieces/Rook";
+import Knight from "./pieces/Knight";
+import Queen from "./pieces/Queen";
+import King from "./pieces/King";
 import Svg from "./Svg";
+
+const pieces = {
+  Pawn,
+  Bishop,
+  Rook,
+  Knight,
+  Queen,
+  King,
+};
 
 export default function ChessPiece({ piece, color, size }) {
   const Piece = pieces[piece];
